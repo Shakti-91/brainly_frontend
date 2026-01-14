@@ -33,7 +33,7 @@ export const BrainIcon=()=>{
 
 export const Tweet=()=>{
     return (
-        <div>
+        <div className="mt-0.5 h-4.5 w-4.5">
               <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -48,7 +48,7 @@ export const Tweet=()=>{
 
 export const Youtube=()=>{
     return (
-        <div>
+        <div className="mt-0.5">
               <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -96,11 +96,33 @@ export const LinkIcon=()=>{
     )
 }
 
-export const DeleteIcon=()=>{
+export const CrossIcon=()=>{
     return(
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+        </div>
+    )
+}
+
+export const EditIcon=()=>{
+    return (
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-5">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+</svg>
+
+        </div>
+    )
+}
+
+export const HyperLink=()=>{
+    return(
+        <div >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-5">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
 </svg>
 
         </div>

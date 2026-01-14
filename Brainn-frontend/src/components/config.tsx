@@ -11,11 +11,23 @@ export interface ButtonInterface{
 
 export interface CardInterface{
     type:string,
-    title:string
-    link:string
+    title:string,
+    link:string,
+    _id:string,
+    onClick?:()=>void
+     handleYes?:()=>void
+
 }
 
 export interface ModalInterface{
     open:boolean,
-    onClose:()=>void
+    onClose:()=>void,
+    onDelete?:()=>void
+    text?:string
+}
+
+export interface SharedInterface{
+    title:string,
+    type:string,
+    link:string
 }

@@ -14,13 +14,13 @@ export const Sidebar=()=>{
             <div className="flex ml-2 flex-col gap-4 ">
                 <input className="h-8  w-42 rounded-md border border-gray-300" type="text" placeholder="search" />
                 <div className="flex items-center cursor-pointer hover:underline">
-                    <div className="h-5 pt-0.5 w-5">
+                    <div className="h-5  w-5">
                     <Tweet/>
                     </div>
                     <h1 className="text-xl ml-1 font-normal text-gray-500">Tweets</h1>
                 </div>
                 <div className="flex items-center cursor-pointer hover:underline">
-                    <div className="h-5 pt-0.5 w-5">
+                    <div className="h-5  w-5">
                     <Youtube/>
                     </div>
                     <h1 className="text-xl ml-1 font-normal text-gray-500">YouTube</h1>

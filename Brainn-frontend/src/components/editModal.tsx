@@ -7,7 +7,7 @@ import type { ModalInterface } from "./config"
 import axios from "axios"
 import { backend_url } from "./url"
 
-export const Modal=(props:ModalInterface)=>{
+export const EditModal=(props:ModalInterface)=>{
     const [type,setType]=useState("Link");
     const titleRef=useRef<HTMLInputElement|null>(null);
     const linkRef=useRef<HTMLInputElement|null>(null);

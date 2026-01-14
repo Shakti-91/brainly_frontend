@@ -1,38 +1,14 @@
-import { DelteIcon, Youtube,Link,Tweet, LinkIcon, HyperLink} from "../assets/Icons"
-import type { CardInterface } from "./config"
-import { EditIcon } from "../assets/Icons"
-import { useState } from "react";
-import { Sidebar } from "./sidebar";
-import { DeleteModal } from "./deleteModal";
-import { backend_url } from "./url";
-import axios from "axios";
-import { EditModal } from "./editModal";
-export const Card=(props:CardInterface)=>{
-  const [closeModal,setcloseModal]=useState(false);
-  const [edit,setEdit]=useState(false);
-  function close (){setcloseModal(false)};
- async function DeleteContent(_id:string) {
-    try{
-    await axios.delete(`${backend_url}/api/v1/content`,{
-      data:{
-        contentId:_id
-      },
-      headers:{
-        'authorization':localStorage.getItem('token')
-      }
-    })
-    close();
-    props.handleYes?.();
-  }catch(error:any){
-    console.log('server crash');
-    return;
-  }
-  }
+import {  Youtube,Link,Tweet, LinkIcon, HyperLink} from "../assets/Icons"
+import type { SharedInterface } from "./config"
+
+export const SharedCardContent=(props:SharedInterface)=>{
+ 
+ 
+ 
 
     return (
       <div>
-        <DeleteModal open={closeModal}  onClose={close} onDelete={()=>{DeleteContent(props._id)}}/>
-          <EditModal open={edit} onClose={()=>{setEdit(false)}}/>
+        
         <div className=" rounded-md border-2 border-gray-200 bg-white w-72  overflow-y-auto h-78">
           <div className="top-0 z-10 sticky bg-white flex flex-col">
             <div className="flex justify-between p-4  items-center">
@@ -40,16 +16,13 @@ export const Card=(props:CardInterface)=>{
                 <div className="h-5 text-gray-600  w-5">
                 {props.type==='Tweet'?(<Tweet/>):props.type==='Link'?(<div ><Link/></div>):<Youtube/>}
                 </div>
-               <div className="text-gray-600 cursor-pointer hover:text-black" onClick={()=>setEdit(true)}> <EditIcon/></div>
+               
                 </div> 
                 <div className="flex gap-4 h-5  text-gray-600 ">
                 <div className="hover:text-black text-gray-600 cursor-pointer">
                  <a href={props.link} target="_blank"><HyperLink/></a>
                 </div>  
-                <div className="hover:text-black cursor-pointer" onClick={()=>{setcloseModal(true)}}
-                 >
-                  <DelteIcon/>
-                </div>  
+                
                 </div>
             </div>
              
