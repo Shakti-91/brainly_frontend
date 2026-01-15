@@ -17,10 +17,10 @@ export const HomePage=()=>{
   const [cr,setCr]=useState(false);
   const [share,setShare]=useState(false);
    const [link,setLink]=useState('');
-   
+   const [render,setRender]=useState(false);
   useEffect(()=>{
     getContent();
-  },[openModal,cr]);
+  },[openModal,cr,render]);
     
   async function shareContent(){
     try{
@@ -61,7 +61,7 @@ export const HomePage=()=>{
       <div className='flex gap-6  flex-wrap'>
         { contents.map(({type,title,link,_id})=>
           <Card title={title} link={link} type={type} _id={_id} 
-            handleYes={()=>{setCr(!cr)}}
+            handleYes={()=>{setCr(!cr)}} handleRender={()=>setRender(!render)} 
         />
         )
         

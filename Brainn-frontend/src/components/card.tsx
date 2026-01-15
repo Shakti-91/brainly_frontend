@@ -32,7 +32,7 @@ export const Card=(props:CardInterface)=>{
     return (
       <div>
         <DeleteModal open={closeModal}  onClose={close} onDelete={()=>{DeleteContent(props._id)}}/>
-          <EditModal open={edit} onClose={()=>{setEdit(false)}}/>
+            <EditModal id={props._id} handleRender={props.handleRender} open={edit} onClose={()=>{setEdit(false)}} link={props.link} title={props.title} type={props.type}/>
         <div className=" rounded-md border-2 border-gray-200 bg-white w-72  overflow-y-auto h-78">
           <div className="top-0 z-10 sticky bg-white flex flex-col">
             <div className="flex justify-between p-4  items-center">

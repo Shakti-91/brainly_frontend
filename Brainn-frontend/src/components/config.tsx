@@ -14,9 +14,9 @@ export interface CardInterface{
     title:string,
     link:string,
     _id:string,
-    onClick?:()=>void
-     handleYes?:()=>void
-
+    onClick?:()=>void,
+     handleYes?:()=>void,
+    handleRender?:()=>void
 }
 
 export interface ModalInterface{

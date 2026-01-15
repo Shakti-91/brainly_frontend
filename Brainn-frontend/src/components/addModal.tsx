@@ -15,6 +15,10 @@ export const Modal=(props:ModalInterface)=>{
     async function handleClick() {
         const title=titleRef.current?.value;
         const link=linkRef.current?.value;
+        if(title=="" || link==""){
+            alert('feilds can not be empty')
+            return;
+        }
         try{
             await axios.post(`${backend_url}/api/v1/content`,{
                 type,
