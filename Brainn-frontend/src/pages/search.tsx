@@ -1,18 +1,18 @@
-// searching ke option ka kaam kar le 
-import { ShareIcon, PlusIcon } from "../assets/Icons"
-import Button from "../components/Button"
+
 import { Card } from "../components/card"
 import { Sidebar } from "../components/sidebar"
-import { Tweet } from "../assets/Icons"
+
 import { useEffect, useState } from "react"
 import { Modal } from "../components/addModal"
 import { useConten } from "../hook/content"
 import axios from "axios"
-import { ShareModal } from "../components/sharemodal"
+
 import { backend_url } from "../components/url"
-import { DeleteModal } from "../components/deleteModal"
-import { EditModal } from "../components/editModal"
-export const LinkPage=()=>{
+
+
+import { useParams } from "react-router-dom"
+export const SearchPage=()=>{
+     const { id } = useParams();
   const[openModal,setModal]=useState(false);
   const {contents,getContent}=useConten();
   const [cr,setCr]=useState(false);
@@ -58,10 +58,18 @@ export const LinkPage=()=>{
          </div>
       </div>
       <div className='flex gap-6  flex-wrap'>
-        { contents.map(({type,title,link,_id})=>type==='Link'?
-          <Card title={title} link={link} type={type} _id={_id} 
-            handleYes={()=>{setCr(!cr)}} handleRender={()=>setRender(!render)} 
-        />:null
+        {contents.map(({ title, link, _id, type }) =>
+    String(title).includes(String(id)) ? (
+      <Card
+        key={_id}
+        title={title}
+        link={link}
+        type={type}
+        _id={_id}
+        handleYes={() => setCr(!cr)}
+        handleRender={() => setRender(!render)}
+      />
+    ) : null
         )
         
         }

@@ -12,7 +12,7 @@ import { ShareModal } from "../components/sharemodal"
 import { backend_url } from "../components/url"
 import { DeleteModal } from "../components/deleteModal"
 import { EditModal } from "../components/editModal"
-export const LinkPage=()=>{
+export const TweetPage=()=>{
   const[openModal,setModal]=useState(false);
   const {contents,getContent}=useConten();
   const [cr,setCr]=useState(false);
@@ -58,7 +58,7 @@ export const LinkPage=()=>{
          </div>
       </div>
       <div className='flex gap-6  flex-wrap'>
-        { contents.map(({type,title,link,_id})=>type==='Link'?
+        { contents.map(({type,title,link,_id})=>type==='Tweet'?
           <Card title={title} link={link} type={type} _id={_id} 
             handleYes={()=>{setCr(!cr)}} handleRender={()=>setRender(!render)} 
         />:null

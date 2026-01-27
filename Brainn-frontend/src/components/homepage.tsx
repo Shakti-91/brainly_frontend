@@ -2,15 +2,14 @@ import { ShareIcon, PlusIcon } from "../assets/Icons"
 import Button from "./Button"
 import { Card } from "./card"
 import { Sidebar } from "./sidebar"
-import { Tweet } from "../assets/Icons"
+
 import { useEffect, useState } from "react"
 import { Modal } from "./addModal"
 import { useConten } from "../hook/content"
 import axios from "axios"
 import { ShareModal } from "./sharemodal"
 import { backend_url } from "./url"
-import { DeleteModal } from "./deleteModal"
-import { EditModal } from "./editModal"
+
 export const HomePage=()=>{
   const[openModal,setModal]=useState(false);
   const {contents,getContent}=useConten();
