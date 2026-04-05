@@ -1,1 +1,1 @@
-export const backend_url="http://localhost:3000"
+export const backend_url="http://44.211.32.96:3000"
